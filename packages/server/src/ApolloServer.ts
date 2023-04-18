@@ -335,6 +335,8 @@ export class ApolloServer<in out TContext extends BaseContext = BaseContext> {
   private warnAgainstLegacyConfigOptions(
     config: ApolloServerOptions<TContext>,
   ) {
+    // TODO(AS6): this is a helpful v4 -> v5 migration message, we can remove it
+    // in the next major
     if ('status400ForVariableCoercionErrors' in config) {
       this.logger.warn(
         'The `status400ForVariableCoercionErrors: true` configuration option is now the default behavior and has no effect in Apollo Server v5.',

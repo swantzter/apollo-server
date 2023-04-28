@@ -344,7 +344,7 @@ function expectECONNREFUSEDerror(err: any) {
   // AggregateError is thrown by Node 20+
   if (err.name === 'AggregateError') {
     for (const error of err.errors) {
-      expect(error.message).toMatch(/ECONNREFUSED/)
+      expect(error.message).toMatch(/ECONNREFUSED/);
     }
   } else {
     expect(err.message).toMatch(/ECONNREFUSED/);
